@@ -6,7 +6,7 @@ before_install:
     - docker build -t lbplayer/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -e CI=true lbplayer/react-test npm test-- --coverage
+    - docker run -e CI=true lbplayer/react-test npm test -- --coverage
 
 after_success:
     - docker build -t lbplayer/multi-client ./client
