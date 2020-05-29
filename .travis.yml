@@ -14,7 +14,7 @@ after_success:
     - docker build -t lbplayer/multi-server ./server
     - docker build -t lbplayer/multi-worker ./worker
     # Log in to the Docker CLI
-    - echo "$DOCKER_PASSWORD" | docker login - "$DOCKER_ID" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take the images and push them to docker hub
     - docker push lbplayer/multi-client
     - docker push lbplayer/multi-nginx
